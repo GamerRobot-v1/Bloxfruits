@@ -54,11 +54,15 @@
       letter-spacing: 0.4px;
     }
 
-    /* ===== SHOP GRID ===== */
+    /* ===== MAIN CONTENT ===== */
     main {
       padding: 40px 28px;
       max-width: 1200px;
       margin: 0 auto;
+      /* Add semi-transparent overlay like hero */
+      background: rgba(14,18,32,0.6);
+      backdrop-filter: blur(6px);
+      border-radius: 20px;
     }
 
     .shop-title {
@@ -131,7 +135,7 @@
     <h1 class="shop-title">Available Items</h1>
     <div class="shop-grid">
 
-      <!-- Example Item -->
+      <!-- Example Items -->
       <div class="shop-item" onclick="location.href='item1.html'">
         <img src="item1.png" alt="Item 1">
         <h3>Legendary Sword</h3>
@@ -156,7 +160,7 @@
         <p>Price: 600 Robux</p>
       </div>
 
-      <!-- Add more items by copying the div above -->
+      <!-- Add more items as needed -->
     </div>
   </main>
 
