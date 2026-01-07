@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blox Fruits Shop - Items</title>
 <link rel="icon" type="image/png" href="logo.png">
-
   <style>
     /* ===== RESET ===== */
     *, *::before, *::after {
@@ -17,7 +16,12 @@
 
     body {
       min-height: 100vh;
-      background: radial-gradient(circle at top, #1b2150, #0e1220 70%);
+      /* Hero background image with dark overlay */
+      background:
+        linear-gradient(rgba(14,18,32,0.75), rgba(14,18,32,0.9)),
+        url("hero-bg.jpg");
+      background-size: cover;
+      background-position: center;
       color: #ffffff;
     }
 
@@ -60,7 +64,7 @@
       padding: 40px 28px;
       max-width: 1200px;
       margin: 0 auto;
-      /* Add semi-transparent overlay like hero */
+      /* Glass overlay on top of background */
       background: rgba(14,18,32,0.6);
       backdrop-filter: blur(6px);
       border-radius: 20px;
