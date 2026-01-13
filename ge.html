@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blox Fruits Shop - Checkout</title>
+
+  <link rel="icon" type="image/png" href="logo.png">
+
+  <style>
+    /* ===== RESET ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", system-ui, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(14,18,32,0.75), rgba(14,18,32,0.9)),
+        url("hero-bg.jpg");
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      padding: 0 28px;
+      background: linear-gradient(90deg, #5b77ff, #7a8dff);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .brand-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+
+    /* ===== FORM CARD ===== */
+    form {
+      max-width: 420px;
+      margin: 50px auto;
+      background: rgba(255,255,255,0.07);
+      padding: 32px;
+      border-radius: 22px;
+      backdrop-filter: blur(8px);
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    }
+
+    /* ===== IMAGE ===== */
+    .survey-image {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 28px;
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .survey-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ===== INPUT ===== */
+    .option-group {
+      margin-bottom: 28px;
+      text-align: left;
+    }
+
+    .option-group label {
+      display: block;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .option-group input {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: none;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    /* ===== BUTTON ===== */
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #667eea;
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 10px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn:hover {
+      background: #5a6fdc;
+      transform: translateY(-2px);
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 640px) {
+      form {
+        margin: 30px 16px;
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="brand">
+      <img src="logo.png" alt="Blox Fruits Logo" class="logo">
+      <span class="brand-title">Blox Fruits Shop - Official</span>
+    </div>
+  </header>
+
+  <!-- FORM -->
+  <form>
+    <div class="survey-image">
+      <img src="ge.png" alt="Icon">
+    </div>
+
+    <div class="option-group">
+      <label>Your Username</label>
+      <input type="text" placeholder="Enter your Username">
+    </div>
+
+    <a href="index.html" class="btn">Checkout</a>
+  </form>
+
+</body>
+</html>
