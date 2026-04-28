@@ -4,40 +4,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blox Fruits Shop - Items</title>
-<link rel="icon" type="image/png" href="logo.png">
+  <link rel="icon" type="image/png" href="logo.png">
   <style>
     /* ===== RESET ===== */
     *, *::before, *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "Segoe UI", system-ui, sans-serif;
+      font-family: "Inter", Arial, sans-serif;
+    }
+
+    /* ===== ROOT VARIABLES ===== */
+    :root {
+      --accent: #2563eb;
+      --bg: #f0f4ff;
+      --card: #ffffff;
+      --muted: #6b7280;
+      --radius: 14px;
+      --shadow: 0 8px 20px rgba(0,0,0,0.07);
     }
 
     body {
-      min-height: 100vh;
-      /* Hero background image with dark overlay */
-      background:
-        linear-gradient(rgba(14,18,32,0.75), rgba(14,18,32,0.9)),
-        url("hero-bg.jpg");
-      background-size: cover;
-      background-position: center;
-      color: #ffffff;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
+      margin: 0;
+      background: linear-gradient(180deg, #eef2ff, #f8fafc);
+      color: #0f172a;
     }
 
     /* ===== HEADER ===== */
     header {
-      height: 72px;
+      background: var(--card);
+      padding: 20px;
+      box-shadow: var(--shadow);
       display: flex;
+      justify-content: center;
       align-items: center;
-      padding: 0 28px;
-      background: linear-gradient(90deg, #5b77ff, #7a8dff);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+      gap: 12px;
     }
 
     .brand {
@@ -56,18 +57,14 @@
     .brand-title {
       font-size: 1.35rem;
       font-weight: 700;
-      letter-spacing: 0.4px;
+      color: var(--accent);
     }
 
     /* ===== MAIN CONTENT ===== */
     main {
-      padding: 40px 28px;
-      max-width: 1200px;
-      margin: 0 auto;
-      /* Glass overlay on top of background */
-      background: rgba(14,18,32,0.6);
-      backdrop-filter: blur(6px);
-      border-radius: 20px;
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 20px;
     }
 
     .shop-title {
@@ -75,52 +72,79 @@
       font-weight: 800;
       text-align: center;
       margin-bottom: 40px;
+      color: #0f172a;
     }
 
+    /* Product Grid */
     .shop-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 24px;
+      gap: 22px;
     }
 
     .shop-item {
-      background: rgba(255,255,255,0.06);
-      border-radius: 16px;
-      padding: 24px;
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
       text-align: center;
-      cursor: pointer;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      backdrop-filter: blur(6px);
+      transition: 0.2s ease;
     }
 
     .shop-item:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 60px rgba(91,119,255,0.5);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.10);
     }
 
     .shop-item img {
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
+      width: 100%;
+      height: 180px;
       border-radius: 12px;
-      margin-bottom: 16px;
+      object-fit: cover;
+      margin-bottom: 10px;
     }
 
     .shop-item h3 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 8px;
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 6px;
     }
 
     .shop-item p {
-      font-size: 0.95rem;
-      color: #cfd6ff;
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .detail-btn {
+      background: var(--accent);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .detail-btn:hover {
+      opacity: 0.9;
     }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 640px) {
       main {
         padding: 24px 16px;
+      }
+
+      .shop-item h3 {
+        font-size: 1.2rem;
+      }
+
+      .shop-item p {
+        font-size: 0.95rem;
       }
     }
   </style>
@@ -131,7 +155,7 @@
   <header>
     <div class="brand">
       <img src="logo.png" alt="Blox Fruits Logo" class="logo">
-      <span class="brand-title">Blox Fruits shop - Official</span>
+      <span class="brand-title">Blox Fruits Shop - Official</span>
     </div>
   </header>
 
@@ -140,59 +164,68 @@
     <h1 class="shop-title">Available Items</h1>
     <div class="shop-grid">
 
-<a href="cb.html" class="shop-item">
-  <img src="cb.png" alt="Item">
-  <h3>Celebration Bomb (32993 Left)</h3>
-  <p>Price: 29 Robux</p>
-</a>
-      
-<a href="ge.html" class="shop-item">
-  <img src="ge.png" alt="Item">
-  <h3>Glacier Eagle (31563 Left)</h3>
-  <p>Price: 29 Robux</p>
-</a>
+      <a href="cb.html" class="shop-item">
+        <img src="cb.png" alt="Item">
+        <h3>Celebration Bomb (32993 Left)</h3>
+        <p>Price: 29 Robux</p>
+        <a href="cb.html" class="detail-btn">View Details</a>
+      </a>
 
-<a href="tp.html" class="shop-item">
-  <img src="tp.png" alt="Item">
-  <h3>Torment Pain (12684 Left)</h3>
-  <p>Price: 59 Robux</p>
-</a>
+      <a href="ge.html" class="shop-item">
+        <img src="ge.png" alt="Item">
+        <h3>Glacier Eagle (31563 Left)</h3>
+        <p>Price: 29 Robux</p>
+        <a href="ge.html" class="detail-btn">View Details</a>
+      </a>
 
-<a href="gl.html" class="shop-item">
-  <img src="gl.png" alt="Item">
-  <h3>Green Lightning (3945 Left)</h3>
-  <p>Price: 89 Robux</p>
-</a>
+      <a href="tp.html" class="shop-item">
+        <img src="tp.png" alt="Item">
+        <h3>Torment Pain (12684 Left)</h3>
+        <p>Price: 59 Robux</p>
+        <a href="tp.html" class="detail-btn">View Details</a>
+      </a>
 
-<a href="dp.html" class="shop-item">
-  <img src="dp.png" alt="Item">
-  <h3>Divine Portal (756 Left)</h3>
-  <p>Price: 99 Robux</p>
-</a>
+      <a href="gl.html" class="shop-item">
+        <img src="gl.png" alt="Item">
+        <h3>Green Lightning (3945 Left)</h3>
+        <p>Price: 89 Robux</p>
+        <a href="gl.html" class="detail-btn">View Details</a>
+      </a>
 
-<a href="edw.html" class="shop-item">
-  <img src="edw.png" alt="Item">
-  <h3>Ember Dragon West (189 Left)</h3>
-  <p>Price: 159 Robux</p>
-</a>
+      <a href="dp.html" class="shop-item">
+        <img src="dp.png" alt="Item">
+        <h3>Divine Portal (756 Left)</h3>
+        <p>Price: 99 Robux</p>
+        <a href="dp.html" class="detail-btn">View Details</a>
+      </a>
 
-<a href="index.html" class="shop-item">
-  <img src="ck.png" alt="Item">
-  <h3>Crimson Kitsune(0 Left)</h3>
-  <p>Price: 1 Robux</p>
-</a>
+      <a href="edw.html" class="shop-item">
+        <img src="edw.png" alt="Item">
+        <h3>Ember Dragon West (189 Left)</h3>
+        <p>Price: 159 Robux</p>
+        <a href="edw.html" class="detail-btn">View Details</a>
+      </a>
 
-<a href="gik.html" class="shop-item">
-  <img src="gik.png" alt="Item">
-  <h3>Galaxy Imperium Kitsune (296 Left)</h3>
-  <p>Price: 199 Robux</p>
-</a>
-      
-<a href="check.html" class="shop-item">
-  <img src="logo.png" alt="Item">
-  <h3>Place Holder (N/A)</h3>
-  <p>Price: 0 Robux</p>
-</a>
+      <a href="index.html" class="shop-item">
+        <img src="ck.png" alt="Item">
+        <h3>Crimson Kitsune (0 Left)</h3>
+        <p>Price: 1 Robux</p>
+        <a href="index.html" class="detail-btn">View Details</a>
+      </a>
+
+      <a href="gik.html" class="shop-item">
+        <img src="gik.png" alt="Item">
+        <h3>Galaxy Imperium Kitsune (296 Left)</h3>
+        <p>Price: 199 Robux</p>
+        <a href="gik.html" class="detail-btn">View Details</a>
+      </a>
+
+      <a href="check.html" class="shop-item">
+        <img src="logo.png" alt="Item">
+        <h3>Place Holder (N/A)</h3>
+        <p>Price: 0 Robux</p>
+        <a href="check.html" class="detail-btn">View Details</a>
+      </a>
 
       <!-- Add more items as needed -->
     </div>
@@ -200,4 +233,3 @@
 
 </body>
 </html>
- 
